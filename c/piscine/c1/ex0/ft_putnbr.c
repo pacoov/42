@@ -28,7 +28,7 @@ void	ft_putnbr(int nb)
 
 int	main()
 {
-	ft_putnbr(914765);
+	ft_putnbr(13325);
 	ft_putchar('\n');
 	ft_putnbr(9);
 	return 0;

@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 char *ftstrncpy (char *dest, char *src, int n)
 {
@@ -33,4 +34,16 @@ char    **ft_split(char *str)
     }
     out[k] = NULL;
     return out;
+}
+
+int main()
+{
+    int i = 0;
+    char    **res;
+    res = ft_split("bomboclat rich millionaire");
+    while (res[i])
+    {
+        printf("%s\n", res[i]);
+        i++;
+    }
 }
