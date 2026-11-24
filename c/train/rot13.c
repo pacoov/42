@@ -3,45 +3,38 @@
 int	main(int argc, char **argv)
 {
 	int	j = 1;
+	int	i;
 
 	if (argc >= 2)
 	{
-		int	i = 0;
-
-		while (j <= 2)
+		while (j <= argc)
 		{
-			if (argv[i][j] >= 'a' && argv[i][j] <= 'm')
+			i = 0;
+			while (argv[j][i])
 			{
-				argv[i][j] += 13;
-				write(1, &argv[i][j], 1);
-				i++;
-			}	
-			else if (argv[i][j] >= 'n' && argv[i][j] <= 'z')
-			{
-				argv[i][j] -= 13;
-				write(1, &argv[i][j], 1);
-				i++;
-			}
-			else if (argv[i][j] >= 'A' && argv[i][j] <= 'M')
-			{
-				argv[i][j] += 13;
-				write(1, &argv[i][j], 1);
-				i++;
-			}
-			else if (argv[i][j] >= 'N' && argv[i][j] <= 'Z')
-			{
-				argv[i][j] -= 13;
-				write(1, &argv[i][j], 1);
-				i++;
-			}
-			else
-			{
-				write(1, &argv[i][j], 1);
+				if (argv[j][i] >= 'a' && argv[j][i] <= 'm')
+					argv[j][i] += 13;
+				else if (argv[j][i] >= 'n' && argv[j][i] <= 'z')
+					argv[j][i] -= 13;
+				else if (argv[j][i] >= 'A' && argv[j][i] <= 'M')
+					argv[j][i] += 13;
+				else if (argv[j][i] >= 'N' && argv[j][i] <= 'Z')
+					argv[j][i] -= 13;
+				write(1, &argv[j][i], 1);
 				i++;
 			}
 			j++;
+			if ( j == argc)
+			{
+				write(1, "\n", 1);
+				return 0;
+			}
+			write(1, " ", 1);
 		}
 	}
 	else
+	{
+		write(1, "\n", 1);
 		return 0;
+	}
 }

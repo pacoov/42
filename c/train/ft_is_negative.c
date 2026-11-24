@@ -12,8 +12,10 @@ void    ft_is_negative(int n)
     }
 }
 
-int main()
+int main(int argc, char **argv)
 {
-    ft_is_negative(0);
-    return 0;
+	if (argc == 2)
+		ft_is_negative(argv[argc[1]]);
+	else
+		return 0;
 }
