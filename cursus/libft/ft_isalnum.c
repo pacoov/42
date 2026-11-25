@@ -6,7 +6,7 @@
 /*   By: enzvievi <enzvievi@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 05:53:53 by enzvievi          #+#    #+#             */
-/*   Updated: 2026/11/03 05:55:08 by enzvievi         ###   ########.fr       */
+/*   Updated: 2026/11/25 07:55:39 by enzvievi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int i)
 {
-	if (ft_isalpha(i) || ft_isdigit(c))
+	if (ft_isalpha(i) || ft_isdigit(i))
 		return (1);
 	return (0);
 }
