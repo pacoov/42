@@ -9,7 +9,7 @@ Renvoie le nombre de caractères avant le `\0` final.
 ```c
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -27,23 +27,10 @@ On avance un compteur tant que `str[i]` n'est pas `'\0'`. Le `\0` n'est pas comp
 C'est la fonction la plus utilisée de la libft. Si son prototype est faux, **toutes** les fonctions qui l'appellent produisent des warnings (donc des erreurs avec `-Werror`).
 
 ## Bugs / à corriger dans ton code
-**BUG (prototype)** : le vrai `strlen` est `size_t strlen(const char *s)`.
+✓ **Prototype corrigé** (`size_t ft_strlen(const char *)`, dans le .c et dans `libft.h`). Les warnings `const` ont disparu.
 
-- Sans `const`, chaque appel avec un `const char *` (dans `ft_strdup`, `ft_strjoin`, `ft_substr`, `ft_strlcpy`...) donne `discards 'const' qualifier` : erreur avec `-Werror`.
-- Avec `int`, les comparaisons avec des `size_t` donnent `-Wsign-compare`.
-
-Corrige la fonction **et** `libft.h` :
+Il reste un détail : le compteur `i` est un `int` alors que la fonction renvoie un `size_t`. Ça marche, mais pour une chaîne de plus de 2 milliards de caractères `i` déborderait. Le plus propre :
 
 ```c
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+size_t	i;
 ```
-
-Si tu passes `i` en `size_t` dans `ft_strrchr`, attention au piège de la boucle descendante (voir cette fiche).

@@ -19,7 +19,7 @@
 - **Cas dégénérés** : chaîne vide, `len = 0`, `start` hors limites, `set` vide. Ce sont eux que la moulinette teste.
 
 ## Fiches
-`ft_calloc`, `ft_strdup`, `ft_substr`, `ft_strjoin`, `ft_strtrim`
+`ft_calloc`, `ft_strdup`, `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`
 
-## Fonction manquante
-`ft_split` est déclarée dans `libft.h` mais il n'y a pas de `ft_split.c` dans ton dossier. C'est la plus difficile de cette notion (allocation d'un tableau de chaînes, libération en cas d'échec au milieu).
+## La plus difficile : `ft_split`
+Elle alloue un **tableau de chaînes** : plusieurs `malloc` imbriqués. Si l'un échoue au milieu, il faut libérer tout ce qui a déjà été alloué avant de renvoyer `NULL`. Voir la fiche pour la trace et la gestion des fuites.

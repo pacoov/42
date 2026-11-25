@@ -35,4 +35,4 @@ On protège contre le dépassement de la multiplication, on appelle `malloc(coun
 - Le cast `(void *)` devant `malloc` est inutile en C.
 
 ## Bugs / à corriger dans ton code
-**Dépendance manquante** : `ft_bzero` n'existe pas dans ton dossier. Sans `ft_bzero.c`, le programme ne se lie pas (`undefined reference`). Voir la notion 03 pour le code.
+**Dépendance manquante** : `ft_bzero` est déclarée dans `libft.h` mais il n'y a toujours pas de `ft_bzero.c`. Sans lui, la bibliothèque ne se lie pas (`undefined reference`). Voir la notion 03 pour le code.

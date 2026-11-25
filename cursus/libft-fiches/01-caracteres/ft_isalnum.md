@@ -11,7 +11,7 @@ Renvoie 1 si `c` est une lettre ou un chiffre.
 
 int	ft_isalnum(int i)
 {
-	if (ft_isalpha(i) || ft_isdigit(c))
+	if (ft_isalpha(i) || ft_isdigit(i))
 		return (1);
 	return (0);
 }
@@ -24,10 +24,4 @@ Composition de deux fonctions déjà écrites : `ft_isalpha(c) || ft_isdigit(c)`
 Cette fonction dépend de `ft_isalpha` : si `ft_isalpha` est fausse, `ft_isalnum` l'est aussi.
 
 ## Bugs / à corriger dans ton code
-**BUG (erreur de compilation)** : le paramètre s'appelle `i` mais tu utilises `c` dans `ft_isdigit(c)`.
-
-```c
-if (ft_isalpha(i) || ft_isdigit(i))
-```
-
-Le plus simple est de nommer le paramètre `c` partout, comme dans `libft.h`.
+✓ **Corrigé** : tu utilises maintenant `i` partout. Rien à signaler.
